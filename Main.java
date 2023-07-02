@@ -1,3 +1,7 @@
 public class Main {
-    /dfsafadsf
+
+    public static void main(String[] args) {
+        System.out.println("HO collegato GitHub");
+    }
+    //dfsafadsf
 }
