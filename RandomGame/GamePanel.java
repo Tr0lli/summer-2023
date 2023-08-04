@@ -11,7 +11,7 @@ public class GamePanel extends JPanel implements ActionListener{
 	static final int SCREEN_HEIGHT = 750;
 	static final int UNIT_SIZE = 50;
 	static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE);
-	static final int DELAY = 0;
+	static int DELAY = 200;
     Random random;
     char direction = 'R';
 	boolean running = false;
@@ -39,8 +39,31 @@ public class GamePanel extends JPanel implements ActionListener{
 		timer.start();
     }
 
+    public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		draw(g);
+	}
+
+    private void draw(Graphics g) {
+        if(running) {
+            g.setColor(Color.yellow);
+			g.fillOval(coinX, coinY, UNIT_SIZE, UNIT_SIZE);
+
+            g.setColor(Color.blue);
+			g.fillRect(playerX, playerY, UNIT_SIZE, UNIT_SIZE);
+        } else {
+			gameOver(g);
+		}
+    }
+
+
+    private void gameOver(Graphics g) {
+    }
+
 
     private void newCoin() {
+        coinX = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;
+		coinY = random.nextInt((int)(SCREEN_HEIGHT/UNIT_SIZE))*UNIT_SIZE;
     }
 
 
@@ -86,6 +109,40 @@ public class GamePanel extends JPanel implements ActionListener{
 
     
     public class MyKeyAdapter extends KeyAdapter{
-
+        @Override
+		public void keyPressed(KeyEvent e) {
+			switch(e.getKeyCode()) {
+            case KeyEvent.VK_SPACE:
+                if (timer.isRunning()){
+                    timer.stop();;
+                } else {
+                    timer.start();
+                }
+                    
+                 
+                
+                break;
+			case KeyEvent.VK_LEFT:
+				
+				direction = 'L';
+				
+				break;
+			case KeyEvent.VK_RIGHT:
+				
+				direction = 'R';
+				
+				break;
+			case KeyEvent.VK_UP:
+				
+				direction = 'U';
+				
+				break;
+			case KeyEvent.VK_DOWN:
+				
+				direction = 'D';
+				
+				break;
+			}
+        }
     }
 }
