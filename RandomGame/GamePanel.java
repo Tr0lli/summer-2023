@@ -105,8 +105,6 @@ public class GamePanel extends JPanel implements ActionListener{
 
 
     
-
-
     
     public class MyKeyAdapter extends KeyAdapter{
         @Override
@@ -119,8 +117,6 @@ public class GamePanel extends JPanel implements ActionListener{
                     timer.start();
                 }
                     
-                 
-                
                 break;
 			case KeyEvent.VK_LEFT:
 				
