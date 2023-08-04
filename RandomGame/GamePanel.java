@@ -11,8 +11,16 @@ public class GamePanel extends JPanel implements ActionListener{
 	static final int SCREEN_HEIGHT = 750;
 	static final int UNIT_SIZE = 50;
 	static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE);
-	static final int DELAY = 125;
+	static final int DELAY = 0;
     Random random;
+    char direction = 'R';
+	boolean running = false;
+	Timer timer;
+    int totalCoin;
+    int coinX;
+    int coinY;
+    int playerX;
+    int playerY;
 
     GamePanel(){
 		random = new Random();
@@ -25,17 +33,58 @@ public class GamePanel extends JPanel implements ActionListener{
 
     
     private void startGame() {
+        newCoin();
+        running = true;
+		timer = new Timer(DELAY,this);
+		timer.start();
     }
 
+
+    private void newCoin() {
+    }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+        if(running) {
+			move();
+			checkCoin();
+			checkCollisions();
+		}
+		repaint();
     }
+
+
+    private void move() {
+
+        switch(direction) {
+            case 'U':
+                playerY = playerY - UNIT_SIZE;
+                break;
+            case 'D':
+                playerY = playerY + UNIT_SIZE;
+                break;
+            case 'L':
+                playerX = playerX - UNIT_SIZE;
+                break;
+            case 'R':
+                playerX = playerX + UNIT_SIZE;
+                break;
+            }
+    }
+
+    private void checkCollisions() {
+    }
+
+
+    private void checkCoin() {
+    }
+
+
     
 
+
+    
     public class MyKeyAdapter extends KeyAdapter{
 
     }
