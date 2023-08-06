@@ -21,6 +21,8 @@ public class GamePanel extends JPanel implements ActionListener{
     int coinY;
     int playerX;
     int playerY;
+    int[] xWall = new int[20];
+    int[] yWall = new int[20];
 
 
     GamePanel(){
@@ -35,10 +37,20 @@ public class GamePanel extends JPanel implements ActionListener{
     
     private void startGame() {
         newCoin();
+        newWall();
         running = true;
 		timer = new Timer(DELAY,this);
 		timer.start();
     }
+
+    private void newWall() {
+        //for(int i=0; i<xWall.length; i++) {
+        //}
+        xWall[0] = 1*UNIT_SIZE;
+        yWall[0] = 3*UNIT_SIZE;
+
+    }
+
 
     public void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -52,6 +64,11 @@ public class GamePanel extends JPanel implements ActionListener{
 
             g.setColor(Color.blue);
 			g.fillRect(playerX, playerY, UNIT_SIZE, UNIT_SIZE);
+
+            for(int i=0; i<xWall.length; i++) {
+                g.setColor(Color.darkGray);
+                g.fillRect(xWall[i], yWall[i], UNIT_SIZE, UNIT_SIZE);
+            }
         } else {
 			gameOver(g);
 		}
