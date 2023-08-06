@@ -22,6 +22,7 @@ public class GamePanel extends JPanel implements ActionListener{
     int playerX;
     int playerY;
 
+
     GamePanel(){
 		random = new Random();
 		this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
@@ -96,11 +97,35 @@ public class GamePanel extends JPanel implements ActionListener{
             }
     }
 
-    private void checkCollisions() {
-    }
-
+    public void checkCollisions() {
+	
+		//check if head touches left border
+		if(playerX < 0) {
+			running = false;
+		}
+		//check if head touches right border
+		if(playerX > SCREEN_WIDTH) {
+			running = false;
+		}
+		//check if head touches top border
+		if(playerY < 0) {
+			running = false;
+		}
+		//check if head touches bottom border
+		if(playerY > SCREEN_HEIGHT) {
+			running = false;
+		}
+		
+		if(!running) {
+			timer.stop();
+		}
+	}
 
     private void checkCoin() {
+        if((playerX == coinX) && (playerY == coinY)) {
+			totalCoin++;
+			newCoin();
+		}
     }
 
 
