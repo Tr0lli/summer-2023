@@ -137,7 +137,7 @@ public class GamePanel extends JPanel implements ActionListener{
         //check if touches the wall
         for (int i=0; i<xWall.length; i++){
             if(playerX == xWall[i] && playerY == yWall[i]){
-                
+                running = false;
             }
         }
 		
