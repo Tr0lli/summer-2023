@@ -44,10 +44,12 @@ public class GamePanel extends JPanel implements ActionListener{
     }
 
     private void newWall() {
-        //for(int i=0; i<xWall.length; i++) {
-        //}
-        xWall[0] = 1*UNIT_SIZE;
-        yWall[0] = 3*UNIT_SIZE;
+        for(int i=0; i<xWall.length; i++) {
+            xWall[i] = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;
+		    yWall[i] = random.nextInt((int)(SCREEN_HEIGHT/UNIT_SIZE))*UNIT_SIZE;
+        }
+        //xWall[0] = 1*UNIT_SIZE;
+        //yWall[0] = 3*UNIT_SIZE;
 
     }
 
@@ -132,6 +134,12 @@ public class GamePanel extends JPanel implements ActionListener{
 		if(playerY > SCREEN_HEIGHT) {
 			running = false;
 		}
+        //check if touches the wall
+        for (int i=0; i<xWall.length; i++){
+            if(playerX == xWall[i] && playerY == yWall[i]){
+                
+            }
+        }
 		
 		if(!running) {
 			timer.stop();
