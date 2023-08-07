@@ -95,7 +95,7 @@ public class GamePanel extends JPanel implements ActionListener{
                     isOkay = false;
                 }
             }
-        } while (isOkay);
+        } while (!isOkay);
 
         coinX = x;
 		coinY = y;
