@@ -71,6 +71,11 @@ public class GamePanel extends JPanel implements ActionListener{
                 g.setColor(Color.darkGray);
                 g.fillRect(xWall[i], yWall[i], UNIT_SIZE, UNIT_SIZE);
             }
+
+            g.setColor(Color.red);
+			g.setFont( new Font("Ink Free",Font.BOLD, 40));
+			FontMetrics metrics = getFontMetrics(g.getFont());
+			g.drawString("Score: "+ totalCoin, (SCREEN_WIDTH - metrics.stringWidth("Score: "+ totalCoin))/2, g.getFont().getSize());
         } else {
 			gameOver(g);
 		}
@@ -78,6 +83,7 @@ public class GamePanel extends JPanel implements ActionListener{
 
 
     private void gameOver(Graphics g) {
+        
     }
 
 
