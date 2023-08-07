@@ -21,8 +21,8 @@ public class GamePanel extends JPanel implements ActionListener{
     int coinY;
     int playerX;
     int playerY;
-    int[] xWall = new int[20];
-    int[] yWall = new int[20];
+    int[] xWall = new int[30];
+    int[] yWall = new int[30];
 
 
     GamePanel(){
