@@ -82,8 +82,23 @@ public class GamePanel extends JPanel implements ActionListener{
 
 
     private void newCoin() {
-        coinX = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;
-		coinY = random.nextInt((int)(SCREEN_HEIGHT/UNIT_SIZE))*UNIT_SIZE;
+        boolean isOkay;
+        int x;
+        int y;
+        do{
+            isOkay = true;
+            x = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;
+            y = random.nextInt((int)(SCREEN_HEIGHT/UNIT_SIZE))*UNIT_SIZE;
+
+            for (int i=0; i<xWall.length; i++){
+                if(x == xWall[i] && y == yWall[i]){
+                    isOkay = false;
+                }
+            }
+        } while (isOkay);
+
+        coinX = x;
+		coinY = y;
     }
 
 
