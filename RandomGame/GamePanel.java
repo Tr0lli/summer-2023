@@ -23,7 +23,7 @@ public class GamePanel extends JPanel implements ActionListener{
     int playerY;
     int[] xWall = new int[30];
     int[] yWall = new int[30];
-
+    Image image = new ImageIcon("Mario.png").getImage();
 
     GamePanel(){
 		random = new Random();
@@ -63,7 +63,9 @@ public class GamePanel extends JPanel implements ActionListener{
         if(running) {
             g.setColor(Color.yellow);
 			g.fillOval(coinX, coinY, UNIT_SIZE, UNIT_SIZE);
-
+            
+            
+            //g.drawImage(image, 100, 100, UNIT_SIZE, UNIT_SIZE, null);
             g.setColor(Color.blue);
 			g.fillRect(playerX, playerY, UNIT_SIZE, UNIT_SIZE);
 
