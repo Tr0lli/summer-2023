@@ -10,6 +10,16 @@ public class Main {
 
     }
 
+    public static int romanToInt(String s) {
+        int r = 0;
+        for (int i=0; i<s.length(); i++) {
+            
+        }
+
+        return 0;
+        
+    }
+
     public static boolean isPalindrome(int x) {
         
         String y = Integer.toString(x);
