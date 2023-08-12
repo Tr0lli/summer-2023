@@ -13,10 +13,43 @@ public class Main {
     public static int romanToInt(String s) {
         int r = 0;
         for (int i=0; i<s.length(); i++) {
-            
+            if (s.charAt(i) == 'C' && s.charAt(i+1) == 'M'){
+                r = r - 100;
+                i++;
+            }
+            if (s.charAt(i) == 'M'){
+                while (s.charAt(i) == 'M'){
+                    r = r + 1000;
+                    i++;
+                }
+            }
+            if (s.charAt(i) == 'C' && s.charAt(i+1) == 'D'){
+                r = r - 100;
+                i++;
+            }
+            if (s.charAt(i) == 'D'){
+                while (s.charAt(i) == 'M'){
+                    r = r + 500;
+                    i++;
+                }
+            }
+            if (s.charAt(i) == 'X' && s.charAt(i+1) == 'C'){
+                r = r - 10;
+                i++;
+            }
+            if (s.charAt(i) == 'C'){
+                while (s.charAt(i) == 'M'){
+                    r = r + 100;
+                    i++;
+                }
+            }
+            if (s.charAt(i) == 'X' && s.charAt(i+1) == 'C'){
+                r = r - 10;
+                i++;
+            }
         }
 
-        return 0;
+        return r;
         
     }
 
