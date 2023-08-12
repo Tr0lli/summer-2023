@@ -28,7 +28,7 @@ public class Main {
                 i++;
             }
             if (s.charAt(i) == 'D'){
-                while (s.charAt(i) == 'M'){
+                while (s.charAt(i) == 'D'){
                     r = r + 500;
                     i++;
                 }
@@ -38,14 +38,48 @@ public class Main {
                 i++;
             }
             if (s.charAt(i) == 'C'){
-                while (s.charAt(i) == 'M'){
+                while (s.charAt(i) == 'C'){
                     r = r + 100;
                     i++;
                 }
             }
-            if (s.charAt(i) == 'X' && s.charAt(i+1) == 'C'){
+            if (s.charAt(i) == 'X' && s.charAt(i+1) == 'L'){
                 r = r - 10;
                 i++;
+            }
+            if (s.charAt(i) == 'L'){
+                while (s.charAt(i) == 'L'){
+                    r = r + 100;
+                    i++;
+                }
+            }
+            if (s.charAt(i) == 'I' && s.charAt(i+1) == 'X'){
+                r = r - 1;
+                i++;
+            }
+            if (s.charAt(i) == 'X'){
+                while (s.charAt(i) == 'X'){
+                    r = r + 10;
+                    i++;
+                }
+            }
+            if (s.charAt(i) == 'I' && s.charAt(i+1) == 'V'){
+                r = r - 1;
+                i++;
+            }
+            if (s.charAt(i) == 'X'){
+                while (s.charAt(i) == 'X'){
+                    r = r + 10;
+                    i++;
+                }
+            }
+            if (s.charAt(i) == 'I'){
+                int max = 0;
+                while (s.charAt(i) == 'I' && max<3){
+                    r = r + 1;
+                    i++;
+                    max++;
+                }
             }
         }
 
