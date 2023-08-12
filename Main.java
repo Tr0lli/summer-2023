@@ -16,8 +16,8 @@ public class Main {
     
         while (s.length() > i && s.charAt(i) == 'M'){
             
-                r = r + 1000;
-                i++;
+            r = r + 1000;
+            i++;
             
         }
         if (s.length() > i+1 && s.charAt(i) == 'C' && s.charAt(i+1) == 'M'){
@@ -26,8 +26,8 @@ public class Main {
         }
         while (s.length() > i && s.charAt(i) == 'D'){
             
-                r = r + 500;
-                i++;
+            r = r + 500;
+            i++;
             
         }
         if (s.length() > i+1 && s.charAt(i) == 'C' && s.charAt(i+1) == 'D'){
@@ -36,8 +36,8 @@ public class Main {
         }
         while (s.length() > i && s.charAt(i) == 'C'){
             
-                r = r + 100;
-                i++;
+            r = r + 100;
+            i++;
             
         }
         if (s.length() > i+1 && s.charAt(i) == 'X' && s.charAt(i+1) == 'C'){
@@ -47,8 +47,8 @@ public class Main {
         
         while (s.length() > i && s.charAt(i) == 'L'){
             
-                r = r + 50;
-                i++;
+            r = r + 50;
+            i++;
             
         }
         if (s.length() > i+1 && s.charAt(i) == 'X' && s.charAt(i+1) == 'L'){
@@ -69,24 +69,22 @@ public class Main {
         
         while (s.length() > i && s.charAt(i) == 'V'){
             
-                r = r + 5;
-                i++;
-            
+            r = r + 5;
+            i++;
         }
         if (s.length() > i+1 && s.charAt(i) == 'I' && s.charAt(i+1) == 'V'){
             r = r + 4;
             i = i+2;
         }
-        //if (s.length() > i && s.charAt(i) == 'I'){
-            int max = 0;
-            while (s.length() > i && s.charAt(i) == 'I' && max<3){
-                r = r + 1;
-                i++;
-                max++;
-            }
-        //}
         
-
+        int max = 0;
+        while (s.length() > i && s.charAt(i) == 'I' && max<3){
+            r = r + 1;
+            i++;
+            max++;
+        }
+        
+        
         return r;
         
     }
