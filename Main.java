@@ -10,6 +10,21 @@ public class Main {
 
     }
 
+
+    public static String longestCommonPrefix(String[] strs) {
+        String result = "";
+        int a = 0;
+        for (int i=0; i<strs.length; i++){
+            char letter = strs[i].charAt(a);
+            
+            //for (int j=0; j<strs[i].length(); j++){
+            //}
+        }
+        return null;
+    }
+
+
+
     public static int romanToInt(String s) {
         int r = 0;
         int i = 0;
