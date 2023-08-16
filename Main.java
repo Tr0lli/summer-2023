@@ -5,22 +5,40 @@ public class Main {
      
     public static void main(String[] args) {
         int a = 42;
-        String a1 = "a";
-        System.out.println("Ho collegato GitHub " + isPalindrome(121) + " - "+ romanToInt("MCMXCIV"));
+        //String[] a1 = new String[2];
+        String[] a1 = {"ab", "a"};
+        System.out.println("Ho collegato GitHub " + isPalindrome(121) + " - "+ romanToInt("MCMXCIV")+ " - "+
+                            longestCommonPrefix(a1) );
 
     }
 
 
     public static String longestCommonPrefix(String[] strs) {
         String result = "";
-        int a = 0;
-        for (int i=0; i<strs.length; i++){
-            char letter = strs[i].charAt(a);
-            
-            //for (int j=0; j<strs[i].length(); j++){
-            //}
+        
+        char letter;
+        boolean continua = true;
+        
+        for (int k=0; k<strs[0].length() && continua; k++){
+            letter = strs[0].charAt(k);
+
+            for (int i=0; i<strs.length && continua; i++){
+                        if (strs[i].length()>k && (strs[i].charAt(k)) == letter){
+                            
+                        } else{
+                            continua = false;
+                        }
+
+                        //for (int j=0; j<strs[i].length(); j++){
+                        //}
+                    }
+                if (continua){
+                    result = result + letter;
+                }
+                    
         }
-        return null;
+        
+        return result;
     }
 
 
