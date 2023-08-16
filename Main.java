@@ -28,14 +28,10 @@ public class Main {
                         } else{
                             continua = false;
                         }
-
-                        //for (int j=0; j<strs[i].length(); j++){
-                        //}
                     }
                 if (continua){
                     result = result + letter;
-                }
-                    
+                }       
         }
         
         return result;
