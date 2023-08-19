@@ -1,3 +1,4 @@
-# summer 2023
+# Summer 2023
 
-
+- Snake Game
+- Random Game
