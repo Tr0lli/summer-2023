@@ -12,6 +12,7 @@ public class Main {
 
     }
 
+    /* 
     public static boolean isValid(String s) {
         boolean correct = false;
         if (s.charAt(0) == ')'){
@@ -23,7 +24,7 @@ public class Main {
         }
 
         return correct;
-    }
+    } */
 
 
     public static String longestCommonPrefix(String[] strs) {
