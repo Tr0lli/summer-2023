@@ -14,27 +14,12 @@ public class Main {
 
     public static boolean isValid(String s) {
         boolean correct = false;
-        int tonde = 0;
-        int quadre = 0;
-        int graffe = 0;
-
-        for (int i=0; i<s.length(); i++){
-            if (s.charAt(i) == '(' && tonde >= 0){
-                tonde++;
-            } else if (s.charAt(i) == '[' && quadre >= 0){
-                quadre++;
-            } else if (s.charAt(i) == '{' && graffe >= 0){
-                graffe++;
-            } else if (s.charAt(i) == ')' && tonde > 0){
-                tonde--;
-            } else if (s.charAt(i) == ']' && quadre > 0){
-                quadre--;
-            } else if (s.charAt(i) == '}' && graffe > 0){
-                graffe--;
-            }
+        if (s.charAt(0) == ')'){
+            return true;
         }
-        if (tonde == 0 && quadre == 0 && graffe == 0){
-            correct = true;
+
+        if (s.charAt(0) == '('){
+            return isValid(s.substring(1));
         }
 
         return correct;
