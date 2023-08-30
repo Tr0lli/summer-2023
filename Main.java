@@ -1,4 +1,4 @@
-import java.util.List;
+//import java.util.List;
 
 public class Main {
 
@@ -10,6 +10,21 @@ public class Main {
         System.out.println("Ho collegato GitHub " + isPalindrome(121) + " - "+ romanToInt("MCMXCIV")+ " - "+
                             longestCommonPrefix(a1) );
 
+    }
+
+    public static boolean isValid(String s) {
+        boolean correct = false;
+        int tonde = 0;
+        int quadre = 0;
+        int graffe = 0;
+
+        for (int i=0; i<s.length(); i++){
+            if (s.charAt(i) == '('){
+                
+            }
+        }
+
+        return correct;
     }
 
 
