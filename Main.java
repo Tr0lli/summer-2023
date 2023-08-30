@@ -19,9 +19,22 @@ public class Main {
         int graffe = 0;
 
         for (int i=0; i<s.length(); i++){
-            if (s.charAt(i) == '('){
-                
+            if (s.charAt(i) == '(' && tonde >= 0){
+                tonde++;
+            } else if (s.charAt(i) == '[' && quadre >= 0){
+                quadre++;
+            } else if (s.charAt(i) == '{' && graffe >= 0){
+                graffe++;
+            } else if (s.charAt(i) == ')' && tonde > 0){
+                tonde--;
+            } else if (s.charAt(i) == ']' && quadre > 0){
+                quadre--;
+            } else if (s.charAt(i) == '}' && graffe > 0){
+                graffe--;
             }
+        }
+        if (tonde == 0 && quadre == 0 && graffe == 0){
+            correct = true;
         }
 
         return correct;
