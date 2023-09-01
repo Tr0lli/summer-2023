@@ -23,9 +23,7 @@ public class Main {
 
 
     public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        ListNode next;
-        
-        
+             
         if (list1 != null && list2 != null){
             if (list1.val < list2.val){
                 list1.next = mergeTwoLists(list1.next, list2);
