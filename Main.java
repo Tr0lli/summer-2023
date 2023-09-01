@@ -23,22 +23,25 @@ public class Main {
 
 
     public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        ListNode res;
+        ListNode next;
         
         
         if (list1 != null && list2 != null){
-            
-
-
-            if (list1 == null){
-                return list2;
-            } else {
+            if (list1.val < list2.val){
+                list1.next = mergeTwoLists(list1.next, list2);
                 return list1;
+            } else {
+                list2.next = mergeTwoLists(list1, list2.next);
+                return list2;
             }
-        }
-        
 
-        return ;
+
+        }
+        if (list1 == null){
+                return list2;
+            } 
+            return list1;
+        
     }
 
 
