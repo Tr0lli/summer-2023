@@ -25,14 +25,20 @@ public class Main {
     public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode res;
         
-        if (list1 == null && list2 != null){
-            return list2;
-        } else if (list1 != null && list2 == null){
-            return list1;
+        
+        if (list1 != null && list2 != null){
+            
+
+
+            if (list1 == null){
+                return list2;
+            } else {
+                return list1;
+            }
         }
+        
 
-
-        return res;
+        return ;
     }
 
 
